@@ -24,12 +24,12 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://sandbox.onlinephpfunctions.com/>
 
 * 変数  
- ・基本(プリミティブ型)  
- ・配列  
+ ・基本(プリミティブ型)：<http://www.atmarkit.co.jp/ait/articles/1403/20/news105.html>  
+ ・配列 ：<http://www.atmarkit.co.jp/ait/articles/1404/16/news044.html>
 * 制御命令  
-・条件分岐(if,else)  
-・繰り返し(for,while)
-* 関数  
+・条件分岐(if,else)：<http://www.atmarkit.co.jp/ait/articles/1404/07/news025.html>  
+・繰り返し(for,while)：<http://www.atmarkit.co.jp/ait/articles/1405/14/news031.html>
+* 関数：<http://www.phpbook.jp/tutorial/function/index2.html>  
 ・引数  
 ・戻り値  
 
@@ -97,9 +97,16 @@ Hello worldを出力させる。
 ## URLエンコードツール
 ## 簡易クイズ
 
-# HTTPの仕組み
+# PHP定義済みの変数
+* $_GET：getメソッドにより送信された値
+* $_POST：postメソッドにより送信された値
+* $_COOKIE：クッキーの値
+* $_ REQUEST：$_GET、$_POST、$_COOKIEをまとめたもの
+* $_SERVER：サーバーの環境情報やクライアント（Webブラウザー）の情報
+* $_SESSION：セッションに格納した値
+
 ## GET/POST
-## セッション管理
+
 
 <http://www.atmarkit.co.jp/ait/articles/1407/02/news038.html>
 
