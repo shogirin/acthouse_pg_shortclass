@@ -59,6 +59,10 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 
 * IPアドレスとホスト
 * ポート
+
+<http://x68000.q-e-d.net/~68user/net/net-1.html>  
+<http://www.cman.jp/network/term/port.html>
+
 ### viエディタの使い方
 <http://net-newbie.com/linux/commands/vi.html>  
 <http://dotinstall.com/lessons/basic_vim>  
@@ -77,3 +81,12 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 
 <https://www.apachefriends.org/jp/index.html>
 
+# Webサーバ(Apache)設定
+
+* 設定ファイルの書き方
+* ファイルパーミッション
+
+<http://www.adminweb.jp/apache/>  
+<http://www.tku.ac.jp/~densan/local/permission/permission.htm>
+
+# DBサーバ(Mysql)入門
