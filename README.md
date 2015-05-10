@@ -13,6 +13,8 @@
 * **静的Webページ**：アップロードされたHTMLがそのまま表示
 * **動的Webページ**：プログラムによりHTML内容が状況により変化
 
+<http://genxbeats.com/post/id/static-page-vs-dynamic-page>
+
 ### 動的Webページを実現するには
 * **クライアントサイド**からのアプローチ：**JavaScript**, Flash, Java, Silverlight, ActiveX
 * **サーバーサイド**からのアプローチ：PHP,Ruby,Python,Perl,Java,C#,Javascript(node.js),etc
@@ -31,23 +33,35 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 ・引数  
 ・戻り値  
 
+<http://dotinstall.com/lessons/basic_php_beginner>  
+<http://codeprep.jp/ja/books/book/34>
+
 # プログラムの実行環境を理解しよう
 サーバーを手に入れる(VirtualBox)  
-<https://www.virtualbox.org/>
+<https://www.virtualbox.org/>  
+<http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/>  
 
 ## Linuxについて
 * なぜLinuxOSなのか
 * Linuxの種類
+
+<http://linux.pgtop.net/>
 
 ### GUIとCUI
 * GUI：ウィンドウやアイコンなどを、マウスやタッチ操作で行う
 * CUI：キーボード入力と画面の文字表示のみでコンピュータを操作
 
 ## CUIで操作
-SSHを利用してネットーワーク越しにサーバーを操作する
-### ネットワーク通信の基本
+<http://www.pxt.jp/ja/diary/article/292/>
+
+### SSHを利用してネットーワーク越しにサーバーを操作する
+ネットワーク通信の基本
+
 * IPアドレスとホスト
 * ポート
+### viエディタの使い方
+<http://net-newbie.com/linux/commands/vi.html>  
+<http://dotinstall.com/lessons/basic_vim>  
 
 ## WebサーバーとDBサーバー
 * Web：Apache,Nginx, etc
