@@ -89,4 +89,9 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://www.adminweb.jp/apache/>  
 <http://www.tku.ac.jp/~densan/local/permission/permission.htm>
 
+# サンプルプログラムを作ろう
+## おみくじアプリ
+
+
 # DBサーバ(Mysql)入門
+<http://sqlzoo.net/wiki/SQL_Tutorial>
