@@ -82,6 +82,7 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <https://www.apachefriends.org/jp/index.html>
 
 # Webサーバ(Apache)設定
+Hello worldを出力させる。
 
 * 設定ファイルの書き方
 * ファイルパーミッション
@@ -89,9 +90,39 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://www.adminweb.jp/apache/>  
 <http://www.tku.ac.jp/~densan/local/permission/permission.htm>
 
-# サンプルプログラムを作ろう
-## おみくじアプリ
+# サンプルプログラムを作ろう:LV1
+## おみくじ
+## 丁半
+## 今月カレンダー
+## URLエンコードツール
+## 簡易クイズ
 
+# HTTPの仕組み
+## GET/POST
+## セッション管理
+
+<http://www.atmarkit.co.jp/ait/articles/1407/02/news038.html>
 
 # DBサーバ(Mysql)入門
+* データベース
+* テーブル
+* カラム
+* レコード
+* SQL
+* インデックス
+* トランザクション
+
+<http://dotinstall.com/lessons/basic_mysql_v2>  
+
+## SQLを操作する
+学習サイトを使ってsqlを習得する  
+
+* SELECT/UPDATE/DELETE/INSERT
+* CREATE DROP ALTER
+
 <http://sqlzoo.net/wiki/SQL_Tutorial>
+
+## DB設計
+mysql workbenchを使って、テーブル設計を体験する
+
+<http://dev.mysql.com/downloads/workbench/>
