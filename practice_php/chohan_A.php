@@ -1,12 +1,10 @@
 <?php
 
 $sais = array(mt_rand(1, 6),mt_rand(1, 6));
-
-echo "サイコロ1：{$sais[0]}/n";
-echo "サイコロ2：{$sais[1]}/n";
-
+echo "サイコロ1：{$sais[0]}\n";
+echo "サイコロ2：{$sais[1]}\n";
 // http://php.net/manual/ja/function.sort.php
-$sais = sort($sais);
+sort($sais);
 
 $result = "";
 if($sais[0] === 1){
@@ -89,7 +87,7 @@ if($sais[0] === 1){
 			$result .="ゴゾロ";
 			break;
 		case 6:
-			$result .="ロクゾロ";
+			$result .="ゴロク";
 			break;
 		default:
 			break;
@@ -97,7 +95,7 @@ if($sais[0] === 1){
 }elseif($sais[0] === 6){
 	switch ($sais[1]) {
 		case 6:
-			$result .="ゴロク";
+			$result .="ロクゾロ";
 			break;
 		default:
 			break;
@@ -106,5 +104,3 @@ if($sais[0] === 1){
 // 三項演算子(http://www.phpbook.jp/tutorial/if/index8.html)
 $result .= (($sais[0] + $sais[1]) % 2 === 0) ? "丁":"半";
 echo "結果は：{$result}";
-
-
