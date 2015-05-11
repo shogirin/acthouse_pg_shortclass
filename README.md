@@ -8,6 +8,9 @@
 + [Lesson5]:フロントエンド
 + [Lesson6]:ajax(非同期通信)
 
+## 課題の提出方法
+githubにアカウントを登録し、課題で作成したコードを各々がわかる名前でファイル名を作成しレポジトリに登録すること。
+
   [Lesson1]: Lesson1.md
   [Lesson2]: Lesson2.md
   [Lesson3]: Lesson3.md
