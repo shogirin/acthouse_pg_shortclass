@@ -63,7 +63,7 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://x68000.q-e-d.net/~68user/net/net-1.html>  
 <http://www.cman.jp/network/term/port.html>
 
-### viエディタの使い方
+### vi(vim)エディタの使い方
 <http://net-newbie.com/linux/commands/vi.html>  
 <http://dotinstall.com/lessons/basic_vim>  
 
@@ -156,3 +156,30 @@ mysql workbenchを使って、テーブル設計を体験する
 ## アカウント制掲示板
   
 #フロントエンドからのアプローチ
+## javascriptを学ぶ
+* 基本事項：<http://www.ajaxtower.jp/js/ini/>
+* 変数の宣言(var文)：<http://www.ajaxtower.jp/js/var/index2.html>
+* 関数：<http://www.ajaxtower.jp/js/function/>
+* オブジェクトとnull：<http://www.ajaxtower.jp/js/num/index7.html>
+* オブジェクト：<http://www.ajaxtower.jp/js/object/>  
+ ・ドキュメント(document)：<http://www.ajaxtower.jp/js/document/>  
+ ・ウィンドウ(window)：<http://www.ajaxtower.jp/js/window/>  
+
+# サンプルプログラムを作ろう:Javascript-LV1
+## おみくじ
+## 丁半
+
+#イベントとタイマー処理
+* イベント処理：<http://www.ajaxtower.jp/js/event/>
+* タイマー処理：<http://www.ajaxtower.jp/js/window/index2.html>
+
+#jQueryフレームワーク
+## セレクター
+## DOMの構成操作
+## イベント
+
+# サンプルプログラムを作ろう:Javascript-LV2
+## twitter投稿型名前診断
+## スロットマシーン
+
+# ajax(非同期通信)
