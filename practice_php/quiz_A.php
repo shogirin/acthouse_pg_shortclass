@@ -1,4 +1,5 @@
 <?php
+
 // 正解は全て一番目
 $quiz_list = array(
     array(
@@ -23,20 +24,15 @@ $quiz_list = array(
 $now_index = isset($_COOKIE['now_index'])?$_COOKIE['now_index']:0;
 
 // 解答のチェック
-if($_POST['answer']){
+if(isset($_POST['answer'])){
 	// cookieに解答結果を保存
-	$correct = isset($_COOKIE['correct'])?$_COOKIE['correct']:array();
-	$correct[$now_index] = ($quiz_list[$now_index]['a'][0] == $_POST['answer']);
-	setcookie('correct', $correct);
+	setcookie("correct_{$now_index}", ($quiz_list[$now_index]['a'][0] == $_POST['answer'])?"正解":"不正解");
 	$now_index += 1;// 次の問題へ
 }
 
 // 問題を選ぶ（最後まで解答したら、cookie破棄）
 $now_quiz = array();
-if(count($quiz_list) < $now_index){
-	unset($_COOKIE["now_index"]);
-	unset($_COOKIE["correct"]);
-}else{
+if(count($quiz_list) > $now_index){
 	$now_quiz = $quiz_list[$now_index];
 	shuffle($now_quiz['a']);// 表示順をランダムに
 	setcookie('now_index', $now_index);
@@ -61,11 +57,21 @@ if(count($quiz_list) < $now_index){
     </form>
 <?php }else{ ?>
 	<ul>
-    <?php foreach ($_SESSION['correct'] as $key => $value) {?>
-    	<li><?php echo $quiz_list[$key]['q'];?>：<?php echo $value?"正解":"不正解" ;?></li>	
-    <?php } ?>
+    	<li><?php echo $quiz_list[0]['q'];?>：<?php echo $_COOKIE["correct_0"];?></li>
+    	<li><?php echo $quiz_list[1]['q'];?>：<?php echo $_COOKIE["correct_1"];?></li>
+    	<li><?php echo $quiz_list[2]['q'];?>：<?php echo $_COOKIE["correct_2"];?></li>
+    	<li><?php echo $quiz_list[3]['q'];?>：<?php echo $_COOKIE["correct_3"];?></li>
 	</ul>
+	<?php 
+		// cookie削除
+		setcookie('now_index', "", time() -1000);
+		setcookie('correct_0', "", time() -1000);
+		setcookie('correct_1', "", time() -1000);
+		setcookie('correct_2', "", time() -1000);
+		setcookie('correct_3', "", time() -1000);
+	?>
 	<a href="quiz_A.php">もう一度チャンレジ</a>
-<?php } ?>
+<?php }
+?>
 </body>
 </html>

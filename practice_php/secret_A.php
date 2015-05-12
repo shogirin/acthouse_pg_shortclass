@@ -6,7 +6,7 @@ $check = false;
 if(isset($_SESSION['checked']) && $_SESSION['checked'] === true){
   $check = true;
 }else{
-  if(isset($_POST['pass']){
+  if(isset($_POST['pass'])){
     $check = ($_POST['pass'] == "acthouse")?true:false;
     $_SESSION['checked'] = $check;
   }

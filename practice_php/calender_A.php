@@ -36,7 +36,7 @@ $first_week_num = date("w", $first_day_timestamp);
         <h1>PHPの練習</h1>
         <table>
             <tr>
-                <th colspan="7"><?php echo $year; ?>年<?php echo $month; ?>月</th>
+                <th colspan="7"><?php echo date("Y年m月"); ?></th>
             </tr>
             <tr>
                 <th class="sun">日</th>
@@ -54,14 +54,14 @@ $first_week_num = date("w", $first_day_timestamp);
                 $first_empty = $first_week_num;
                 while($first_empty--)echo "<td></td>";
             }
-            for ($i=1; $i <= $last_day; $i++) {
+            for ($i=0; $i < $last_day; $i++) {
                 if(($i + $first_week_num) % 7 === 0)echo "<tr>";
-                echo "<td>{$i}</td>";
+                echo "<td>" . ($i + 1) . "</td>";
                 if(($i + $first_week_num) % 7 === 6)echo "</tr>";
             }
             // 残りの</td>まで空の<td>を出力
-            if($i % 7 === 6){
-                $last_empty = $i % 7;
+            if($i % 7 !== 6){
+                $last_empty = 7 - (($i + $first_week_num) % 7);
                 while($last_empty--)echo "<td></td>";
                 echo "</tr>";
             }
