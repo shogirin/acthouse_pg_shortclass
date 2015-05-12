@@ -28,8 +28,7 @@ HTTP通信の都合上、単純には実現できない一連の通信をセッ�
 cookieだけで実現するには、保持内容がローカルから安易に参照できてしまう為、サーバー側に一時ファイルやDB、物理メモリーなどに保持内容を投げ、cookieはその取得手段として用いられる。
 <http://www.phpbook.jp/tutorial/session/>
 
-# サンプルプログラムを作ろう:PHP-LV2
-## URLエンコードツール
-## カレンダー
-## 簡易クイズ
-## 合言葉制、秘密のページ
+# 課題：サンプルプログラムを作ろう(PHP-Lv2)
++ URLエンコードツール:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/url_encode_Q.php>
++ 簡易連投クイズ:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/quiz_Q.php>
++ 合言葉制、秘密のページ:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/secret_Q.php>

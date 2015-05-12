@@ -34,6 +34,7 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://dotinstall.com/lessons/basic_php_beginner>  
 <http://codeprep.jp/ja/books/book/34>
 
-# サンプルプログラムを作ろう:PHP-LV1
+# 課題：サンプルプログラムを作ろう(PHP-Lv1)
 + おみくじ:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/omikuji_Q.php>
 + 丁半:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chohan_Q.php>
++ 今月カレンダー:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/calender_Q.php>
