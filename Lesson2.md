@@ -6,6 +6,9 @@ Lesson2:環境の構築
 <https://www.virtualbox.org/>  
 <http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/>  
 
+## ネットワークの設定
+
+
 # Linuxについて
 * [Linuxの種類](http://linux.pgtop.net/)
 * [なぜLinuxOSなのか](http://www.obenri.com/_myserver/linux.html)
@@ -43,22 +46,20 @@ Lesson2:環境の構築
 * M：Mysql
 * P：PHP,Perl, Python  
 
-<https://www.apachefriends.org/jp/index.html>
-<http://t.vowshe.info/jq/ref/XAMPP_install_tips.htm>
-
-SELINXCきる
-パーミッションはdaemon
-共有フォルダ
-xampp.conf
+[XAMPP](https://www.apachefriends.org/jp/index.html)  
+__使い方__
++ https://www.apachefriends.org/faq_linux.html
++ http://t.vowshe.info/jq/ref/XAMPP_install_tips.htm
 
 ## Webサーバ(Apache)設定
 Hello worldを出力させる。
+* [設定ファイルの書き方](http://www.adminweb.jp/apache/)
 
-* 設定ファイルの書き方
-* ファイルパーミッション
+### ブラウザで表示できない時は・・・
+* [ファイルパーミッション](http://www.tku.ac.jp/~densan/local/permission/permission.htm)
+* [SELinuxを無効化する](http://rfs.jp/server/security/selinux01.html)
+* [外部へのアクセス公開](http://agrimo.jp/wp/?page_id=882)
 
-<http://www.adminweb.jp/apache/>  
-<http://www.tku.ac.jp/~densan/local/permission/permission.htm>
 
 # 課題：環境を再構築しよう
 VMに作成した仮想環境を削除し、もう一度LinuxのインストールからWebサーバーによる「hello world」の出力までを構築する。

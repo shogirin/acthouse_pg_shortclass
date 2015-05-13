@@ -1,7 +1,10 @@
 Lesson3:PHPによるWebプログラミング
 ====
 
-# PHP定義済みの変数
+# PHPマニュアル
+<http://php.net/manual/ja/>
+
+## PHP定義済みの変数
 * $_GET：getメソッドにより送信された値
 * $_POST：postメソッドにより送信された値
 * $_COOKIE：クッキーの値
@@ -12,8 +15,9 @@ Lesson3:PHPによるWebプログラミング
 ## GET/POST
 GETとPOSTの違いは、GETメソッドの場合、送信値はURLに連結した形で送信される。  
 例えば、formタグで送信する際は、method属性でgetとpostを設定する。
-
 <http://www.atmarkit.co.jp/ait/articles/1407/02/news038.html>
++ [GET](http://www.phpbook.jp/appli/form/index2.html)
++ [POST](http://www.phpbook.jp/appli/form/index3.html)
 
 ## COOKIE/SESSION
 
