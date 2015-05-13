@@ -22,12 +22,12 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://sandbox.onlinephpfunctions.com/>
 
 * 変数  
- ・基本(プリミティブ型)：<http://www.atmarkit.co.jp/ait/articles/1403/20/news105.html>  
- ・配列 ：<http://www.atmarkit.co.jp/ait/articles/1404/16/news044.html>
+ ・[基本(プリミティブ型)](http://www.atmarkit.co.jp/ait/articles/1403/20/news105.html)  
+ ・[配列](http://www.atmarkit.co.jp/ait/articles/1404/16/news044.html)
 * 制御命令  
-・条件分岐(if,else)：<http://www.atmarkit.co.jp/ait/articles/1404/07/news025.html>  
-・繰り返し(for,while)：<http://www.atmarkit.co.jp/ait/articles/1405/14/news031.html>
-* 関数：<http://www.phpbook.jp/tutorial/function/index2.html>  
+・[条件分岐(if,else)](http://www.atmarkit.co.jp/ait/articles/1404/07/news025.html)  
+・[繰り返し(for,while)](http://www.atmarkit.co.jp/ait/articles/1405/14/news031.html)
+* [関数](http://www.phpbook.jp/tutorial/function/index2.html)  
 ・引数  
 ・戻り値
 
@@ -35,6 +35,6 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 <http://codeprep.jp/ja/books/book/34>
 
 # 課題：サンプルプログラムを作ろう(PHP-Lv1)
-+ おみくじ:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/omikuji_Q.php>
-+ 丁半:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chohan_Q.php>
-+ 今月カレンダー:<https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/calender_Q.php>
++ [おみくじ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/omikuji_Q.php)
++ [丁半](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chohan_Q.php)
++ [今月カレンダー](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/calender_Q.php)

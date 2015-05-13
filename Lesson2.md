@@ -7,8 +7,8 @@ Lesson2:環境の構築
 <http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/>  
 
 # Linuxについて
-* Linuxの種類:<http://linux.pgtop.net/>
-* なぜLinuxOSなのか:<http://www.obenri.com/_myserver/linux.html>
+* [Linuxの種類](http://linux.pgtop.net/)
+* [なぜLinuxOSなのか](http://www.obenri.com/_myserver/linux.html)
 
 ## GUIとCUI
 * GUI：ウィンドウやアイコンなどを、マウスやタッチ操作で行う
@@ -20,8 +20,8 @@ Lesson2:環境の構築
 ### SSHを利用してネットーワーク越しにサーバーを操作する
 ネットワーク通信の基本
 
-* IPアドレスとホスト：<http://x68000.q-e-d.net/~68user/net/net-1.html>  
-* ポート：<http://www.cman.jp/network/term/port.html>
+* [IPアドレスとホスト](http://x68000.q-e-d.net/~68user/net/net-1.html)  
+* [ポート](http://www.cman.jp/network/term/port.html)
 
 <http://starzero.hatenablog.com/entry/20120807/1344356398>
 <http://d.hatena.ne.jp/Loups-garous/20120917/1347900472>
@@ -45,6 +45,11 @@ Lesson2:環境の構築
 
 <https://www.apachefriends.org/jp/index.html>
 <http://t.vowshe.info/jq/ref/XAMPP_install_tips.htm>
+
+SELINXCきる
+パーミッションはdaemon
+共有フォルダ
+xampp.conf
 
 ## Webサーバ(Apache)設定
 Hello worldを出力させる。
