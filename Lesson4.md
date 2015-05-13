@@ -13,22 +13,34 @@ Lesson4:データベース
 * [SQL](http://e-words.jp/w/SQL.html)
 * [MySQL](http://e-words.jp/w/MySQL.html)
 
+## MySQL学習サイト
 <http://dotinstall.com/lessons/basic_mysql_v2>  
 <http://www.dbonline.jp/mysql/>
 
-# SQLを操作する
+# MySQLでSQLを学ぶ
+[基本構文を理解する](http://www.dbonline.jp/mysql/ini)
 
-## 基本構文を理解する
-<http://www.dbonline.jp/mysql/ini>
-
-## 学習サイトを使ってsqlを学習  
+## 学習サイトを使ってsqlを学習
 <http://sqlzoo.net/wiki/SQL_Tutorial>
 
-# データベース設計を学ぶ
+## データベース設計を学ぶ
 [mysql workbench](http://dev.mysql.com/downloads/workbench/)を使って、視覚的にテーブル設計を体験する
 + [テーブル作成](http://www.dbonline.jp/mysql/table/)
 
-# サンプルプログラムを作ろう:PHP-LV3
+# PHPからDBを操作する
+[PDOの利用](http://www.phpbook.jp/tutorial/pdo/)
+
+# 課題：サンプルプログラムを作ろう(PHP-LV3)
 ## 投票システム
++ プログラムコード  
+[入力ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.html)  
+[結果ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.php)  
++ [DBテーブル設計](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_scame.sql)
+
 ## 画像投稿掲示板
++ php
++ schema.sql
+
 ## アカウント制掲示板
++ php
++ schema.sql

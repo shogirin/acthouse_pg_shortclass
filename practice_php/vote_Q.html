@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>投票</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+ <div class="container">
+<h1 class="bg-primary">ゆるきゃら投票</h1>
+<form method="post" action="vote_Q.php">
+  <div class="radio">
+    <label>
+      <input type="radio" name="name" value="ぐんまちゃん">
+      ぐんまちゃん<br/>
+      <img src="http://shop.yurugp.jp/img/character300/c1013.jpg">
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="name" value="くまもん">
+      くまもん<br/>
+      <img src="http://shop.yurugp.jp/img/character300/c1011.jpg">
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="name" value="ふなっしー">
+      ふなっしー<br/>
+      <img src="http://shop.yurugp.jp/img/character300/c1026.jpg">
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+</body>
+</html>

@@ -21,6 +21,9 @@ Lesson1:プログラムの基本
 PHPを使って、どの言語にも共通する基本概念を覚えよう  
 <http://sandbox.onlinephpfunctions.com/>
 
+* PHPの特徴  
+・[基本構文①](http://www.atmarkit.co.jp/ait/articles/1403/13/news031.html)  
+・[基本構文②](http://www.atmarkit.co.jp/ait/articles/1403/20/news105_2.html)
 * 変数  
  ・[基本(プリミティブ型)](http://www.atmarkit.co.jp/ait/articles/1403/20/news105.html)  
  ・[配列](http://www.atmarkit.co.jp/ait/articles/1404/16/news044.html)
@@ -30,9 +33,6 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 * [関数](http://www.phpbook.jp/tutorial/function/index2.html)  
 ・引数  
 ・戻り値
-* PHPの特徴  
-・[基本構文①](http://www.atmarkit.co.jp/ait/articles/1403/13/news031.html)  
-・[基本構文②](http://www.atmarkit.co.jp/ait/articles/1403/20/news105_2.html)
 
 <http://dotinstall.com/lessons/basic_php_beginner>  
 <http://codeprep.jp/ja/books/book/34>
