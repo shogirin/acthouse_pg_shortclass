@@ -31,8 +31,8 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 ・引数  
 ・戻り値
 * PHPの特徴  
-・[基本構文①]<http://www.atmarkit.co.jp/ait/articles/1403/13/news031.html>
-・[基本構文②]<http://www.atmarkit.co.jp/ait/articles/1403/20/news105_2.html>
+・[基本構文①](http://www.atmarkit.co.jp/ait/articles/1403/13/news031.html)  
+・[基本構文②](http://www.atmarkit.co.jp/ait/articles/1403/20/news105_2.html)
 
 <http://dotinstall.com/lessons/basic_php_beginner>  
 <http://codeprep.jp/ja/books/book/34>

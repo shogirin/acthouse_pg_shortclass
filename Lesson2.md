@@ -46,7 +46,7 @@ Lesson2:環境の構築
 * M：Mysql
 * P：PHP,Perl, Python  
 
-[XAMPP](https://www.apachefriends.org/jp/index.html)  
+[XAMPP](https://www.apachefriends.org/jp/index.html)をインストール  
 __使い方__
 + https://www.apachefriends.org/faq_linux.html
 + http://t.vowshe.info/jq/ref/XAMPP_install_tips.htm
