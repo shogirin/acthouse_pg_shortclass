@@ -60,7 +60,7 @@ $first_week_num = date("w", $first_day_timestamp);
                 if(($i + $first_week_num) % 7 === 6)echo "</tr>";
             }
             // 残りの</td>まで空の<td>を出力
-            if($i % 7 !== 6){
+            if(($i + $first_week_num) % 7 !== 6){
                 $last_empty = 7 - (($i + $first_week_num) % 7);
                 while($last_empty--)echo "<td></td>";
                 echo "</tr>";
