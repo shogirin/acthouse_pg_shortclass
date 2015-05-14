@@ -1,9 +1,10 @@
 <?php
 /**
 * 課題：以下の処理を関数定義を行い、処理を分割、整理せよ
-* ヒント：処理を文章の段落のように分け、各内容を関数で分けるなど
-*       構造を明確に分別させることを念頭に考える
+* ヒント：処理を文章の段落のように分け、処理内容を分別させることを念頭に考える
 **/
+<?php
+
 $dice = array(mt_rand(1, 6),mt_rand(1, 6));
 echo "サイコロ1：{$dice[0]}\n";
 echo "サイコロ2：{$dice[1]}\n";
@@ -14,22 +15,22 @@ $result = "";
 if($dice[0] === 1){
 	switch ($dice[1]) {
 		case 1:
-			return  "ピンゾロ";
+			$result .= "ピンゾロ";
 			break;
 		case 2:
-			return  "イチニ";
+			$result .= "イチニ";
 			break;
 		case 3:
-			return "サンミチ";
+			$result .="サンミチ";
 			break;
 		case 4:
-			return "ヨイチ";
+			$result .="ヨイチ";
 			break;
 		case 5:
-			return "グイチ";
+			$result .="グイチ";
 			break;
 		case 6:
-			return "イチロク";
+			$result .="イチロク";
 			break;
 		default:
 			break;
@@ -37,19 +38,19 @@ if($dice[0] === 1){
 }elseif($dice[0] === 2){
 	switch ($dice[1]) {
 		case 2:
-			return "ニゾロ";
+			$result .="ニゾロ";
 			break;
 		case 3:
-			return "サニ";
+			$result .="サニ";
 			break;
 		case 4:
-			return "シニ";
+			$result .="シニ";
 			break;
 		case 5:
-			return "グニ";
+			$result .="グニ";
 			break;
 		case 6:
-			return "ニロク";
+			$result .="ニロク";
 			break;
 		default:
 			break;
@@ -57,16 +58,16 @@ if($dice[0] === 1){
 }elseif($dice[0] === 3){
 	switch ($dice[1]) {
 		case 3:
-			return "サンゾロ";
+			$result .="サンゾロ";
 			break;
 		case 4:
-			return "シソウ";
+			$result .="シソウ";
 			break;
 		case 5:
-			return "グサン";
+			$result .="グサン";
 			break;
 		case 6:
-			return "サブロク";
+			$result .="サブロク";
 			break;
 		default:
 			break;
@@ -74,13 +75,13 @@ if($dice[0] === 1){
 }elseif($dice[0] === 4){
 	switch ($dice[1]) {
 		case 4:
-			return "シゾロ";
+			$result .="シゾロ";
 			break;
 		case 5:
-			return "グシ";
+			$result .="グシ";
 			break;
 		case 6:
-			return "シロク";
+			$result .="シロク";
 			break;
 		default:
 			break;
@@ -88,10 +89,10 @@ if($dice[0] === 1){
 }elseif($dice[0] === 5){
 	switch ($dice[1]) {
 		case 5:
-			return "ゴゾロ";
+			$result .="ゴゾロ";
 			break;
 		case 6:
-			return "ゴロク";
+			$result .="ゴロク";
 			break;
 		default:
 			break;
@@ -99,12 +100,12 @@ if($dice[0] === 1){
 }elseif($dice[0] === 6){
 	switch ($dice[1]) {
 		case 6:
-			return "ロクゾロ";
+			$result .="ロクゾロ";
 			break;
 		default:
 			break;
 	}
 }
 // 三項演算子(http://www.phpbook.jp/tutorial/if/index8.html)
-return  (($dice[0] + $dice[1]) % 2 === 0) ? "丁":"半";
+$result .= (($dice[0] + $dice[1]) % 2 === 0) ? "丁":"半";
 echo "結果は：{$result}";
