@@ -5,7 +5,7 @@
 **/
 $pdo = new PDO('mysql:host=localhost;dbname=acthouse_pg_shortclass',
                 'root',// user,passwordをDBに合わせ変更する
-                '1234');
+                '');
 if(isset($_POST['name'])){
   $sql = "INSERT INTO vote_yuru (name, created) VALUES (:name, now())";
 }

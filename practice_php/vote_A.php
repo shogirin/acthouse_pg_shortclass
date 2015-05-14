@@ -1,11 +1,11 @@
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=acthouse_pg_shortclass',
                 'root',// user,passwordをDBに合わせ変更する
-                '1234');
-if(isset($_POST['name']){
+                '');
+if(isset($_POST['name'])){
   $sql = "INSERT INTO vote_yuru (name, created) VALUES (:name, now())";
   $stmt = $dbh->prepare($sql);
-  $stmt->execute(array(":answer" => $_POST['name'])));
+  $stmt->execute(array(":answer" => $_POST['name']));
 }
 // GROUP BYの取得結果を参照すること
 $sql = "SELECT name, COUNT(*) FROM vote_yuru GROUP BY name";
@@ -24,9 +24,9 @@ $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-        <?php foeeach($res as $v){?>
+        <?php foreach($res as $v){ ?>
           ['<?php echo $v["name"]; ?>', <?php echo $v["COUNT(*)"]; ?>],
-        <?php }?>
+        <?php } ?>
         ]);
         var options = {'title':'ゆるキャラ投票結果',
                        'width':400,

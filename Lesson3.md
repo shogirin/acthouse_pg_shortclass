@@ -4,6 +4,10 @@ Lesson3:PHPによるWebプログラミング
 # PHPマニュアル
 <http://php.net/manual/ja/>
 
++ [関数](http://www.phpbook.jp/func/)
++ [クラスとオブジェクト](http://www.phpbook.jp/tutorial/class/)
++ [外部ファイルの読み込み](http://www.php-labo.net/tutorial/php/include.html)
+
 ## PHP定義済みの変数
 * $_GET：getメソッドにより送信された値
 * $_POST：postメソッドにより送信された値
@@ -36,3 +40,4 @@ cookieだけで実現するには、保持内容がローカルから安易に�
 + [URLエンコードツール](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/url_encode_Q.php)
 + [簡易連投クイズ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/quiz_Q.php)
 + [合言葉制秘密のページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/secret_Q.php)
++ [丁半（関数定義）](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chohan2func_Q.php)
