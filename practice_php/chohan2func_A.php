@@ -4,13 +4,13 @@ $dice = array(mt_rand(1, 6),mt_rand(1, 6));
 echo "サイコロ1：{$dice[0]}\n";
 echo "サイコロ2：{$dice[1]}\n";
 echo "結果は：";
-echo callDice($sais);
-echo judgeDice($sais);
+echo callDice($dice);
+echo judgeDice($dice);
 
-function callDices($sais){
-	sort($sais);
-	if($sais[0] === 1){
-		switch ($sais[1]) {
+function callDices($dice){
+	sort($dice);
+	if($dice[0] === 1){
+		switch ($dice[1]) {
 			case 1:
 				return  "ピンゾロ";
 				break;
@@ -32,8 +32,8 @@ function callDices($sais){
 			default:
 				break;
 		}
-	}elseif($sais[0] === 2){
-		switch ($sais[1]) {
+	}elseif($dice[0] === 2){
+		switch ($dice[1]) {
 			case 2:
 				return "ニゾロ";
 				break;
@@ -52,8 +52,8 @@ function callDices($sais){
 			default:
 				break;
 		}
-	}elseif($sais[0] === 3){
-		switch ($sais[1]) {
+	}elseif($dice[0] === 3){
+		switch ($dice[1]) {
 			case 3:
 				return "サンゾロ";
 				break;
@@ -69,8 +69,8 @@ function callDices($sais){
 			default:
 				break;
 		}
-	}elseif($sais[0] === 4){
-		switch ($sais[1]) {
+	}elseif($dice[0] === 4){
+		switch ($dice[1]) {
 			case 4:
 				return "シゾロ";
 				break;
@@ -83,8 +83,8 @@ function callDices($sais){
 			default:
 				break;
 		}
-	}elseif($sais[0] === 5){
-		switch ($sais[1]) {
+	}elseif($dice[0] === 5){
+		switch ($dice[1]) {
 			case 5:
 				return "ゴゾロ";
 				break;
@@ -94,8 +94,8 @@ function callDices($sais){
 			default:
 				break;
 		}
-	}elseif($sais[0] === 6){
-		switch ($sais[1]) {
+	}elseif($dice[0] === 6){
+		switch ($dice[1]) {
 			case 6:
 				return "ロクゾロ";
 				break;
@@ -106,6 +106,6 @@ function callDices($sais){
 	return '';
 }
 
-function judgeDice($sais){
-	return (($sais[0] + $sais[1]) % 2 === 0) ? "丁":"半";
+function judgeDice($dice){
+	return (($dice[0] + $dice[1]) % 2 === 0) ? "丁":"半";
 }

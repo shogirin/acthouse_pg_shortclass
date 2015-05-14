@@ -7,10 +7,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=acthouse_pg_shortclass',
                 'root',// user,passwordをDBに合わせ変更する
                 '');
 if(isset($_POST['name'])){
-  $sql = "INSERT INTO vote_yuru (name, created) VALUES (:name, now())";
+  $sql = "INSERT INTO yuru_votes (name, created) VALUES (:name, now())";
 }
 // GROUP BYの取得結果を参照すること
-$sql = "SELECT name, COUNT(*) FROM vote_yuru GROUP BY name";
+$sql = "SELECT name, COUNT(*) FROM yuru_votes GROUP BY name";
 ?>
 <html>
   <head>

@@ -1,12 +1,12 @@
 <?php
 
-$sais = array(mt_rand(1, 6),mt_rand(1, 6));
+$dice = array(mt_rand(1, 6),mt_rand(1, 6));
 
-echo "サイコロ1：{$sais[0]}\n";
-echo "サイコロ2：{$sais[1]}\n";
+echo "サイコロ1：{$dice[0]}\n";
+echo "サイコロ2：{$dice[1]}\n";
 
 // http://php.net/manual/ja/function.sort.php
-$sais = sort($sais);
+$dice = sort($dice);
 
 $result = "";
 /*

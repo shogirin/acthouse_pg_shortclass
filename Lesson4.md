@@ -31,16 +31,21 @@ Lesson4:データベース
 [PDOの利用](http://www.phpbook.jp/tutorial/pdo/)
 
 # 課題：サンプルプログラムを作ろう(PHP-LV3)
+
+## 掲示板
++ [プログラムコード](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat_Q.php)
++ [DBテーブル設計](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat_scame.sql)
+
 ## 投票システム
 + プログラムコード  
 [入力ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.html)  
 [結果ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.php)  
 + [DBテーブル設計](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_scame.sql)
 
-## 画像投稿掲示板
-+ php
-+ schema.sql
-
 ## アカウント制掲示板
-+ php
-+ schema.sql
++ プログラムコード  
+[掲示板](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2_Q.html)  
+[ログインページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2login_Q.html)  
+[新規登録ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2siginup_Q.html)  
+[結果ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.php)  
++ [DBテーブル設計](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2_scame.sql)
