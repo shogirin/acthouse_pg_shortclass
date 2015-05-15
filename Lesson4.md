@@ -44,8 +44,7 @@ Lesson4:データベース
 
 ## アカウント制掲示板
 + プログラムコード  
-[掲示板](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2_Q.html)  
-[ログインページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2login_Q.html)  
-[新規登録ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2siginup_Q.html)  
-[結果ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/vote_Q.php)  
+[掲示板](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2_Q.php)  
+[ログインページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2login_Q.php)  
+[新規登録ページ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2siginup_Q.php)  
 + [DBテーブル設計](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/chat2_scame.sql)

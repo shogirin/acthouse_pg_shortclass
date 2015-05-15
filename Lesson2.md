@@ -3,11 +3,12 @@ Lesson2:環境の構築
 
 # プログラムの実行環境を理解しよう
 サーバーを手に入れる(VirtualBox)  
-<https://www.virtualbox.org/>  
-<http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/>  
+・[仮想マシン](https://www.virtualbox.org/)  
+・[CentOS](http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/)  
 
 ## ネットワークの設定
-
+* [ホストOSとのつなぎ方](http://qiita.com/Itomaki/items/a0a29f29d43a7bd24a32)
+* [ネットワークが繋がらない](http://starzero.hatenablog.com/entry/20120807/1344356398)
 
 # Linuxについて
 * [Linuxの種類](http://linux.pgtop.net/)
@@ -25,10 +26,8 @@ Lesson2:環境の構築
 
 * [IPアドレスとホスト](http://x68000.q-e-d.net/~68user/net/net-1.html)  
 * [ポート](http://www.cman.jp/network/term/port.html)
-
-<http://starzero.hatenablog.com/entry/20120807/1344356398>
-<http://d.hatena.ne.jp/Loups-garous/20120917/1347900472>
-<http://te2u.hatenablog.jp/entry/2013/09/12/215031>
+・[ポートの設定方法①](http://d.hatena.ne.jp/Loups-garous/20120917/1347900472)  
+・[ポートの設定方法②](http://te2u.hatenablog.jp/entry/2013/09/12/215031)
 
 ### vi(vim)エディタの使い方
 <http://net-newbie.com/linux/commands/vi.html>  

@@ -33,10 +33,10 @@ PHPを使って、どの言語にも共通する基本概念を覚えよう
 * [関数](http://www.phpbook.jp/tutorial/function/index2.html)  
 ・引数  
 ・戻り値
-
-<http://dotinstall.com/lessons/basic_php_beginner>  
-<http://codeprep.jp/ja/books/book/34>
-<http://www.phpbook.jp/tutorial/>
+* その他学習サイト  
+・<http://dotinstall.com/lessons/basic_php_beginner>  
+・<http://codeprep.jp/ja/books/book/34>  
+・<http://www.phpbook.jp/tutorial/>
 
 # 課題：サンプルプログラムを作ろう(PHP-Lv1)
 + [おみくじ](https://github.com/shogirin/acthouse_pg_shortclass/blob/master/practice_php/omikuji_Q.php)
