@@ -14,9 +14,9 @@
 githubにアカウントを登録し、課題で作成したコードを各々がわかる名前でファイル名を作成しレポジトリに登録すること。  
 
 
-  [Lesson1]: Lesson1.md
-  [Lesson2]: Lesson2.md
-  [Lesson3]: Lesson3.md
-  [Lesson4]: Lesson4.md
-  [Lesson5]: Lesson5.md
-  [Lesson6]: Lesson6.md
+  [Lesson1]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson1
+  [Lesson2]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson2
+  [Lesson3]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson3
+  [Lesson4]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson4
+  [Lesson5]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson5
+  [Lesson6]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson6
