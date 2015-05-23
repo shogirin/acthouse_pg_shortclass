@@ -22,5 +22,5 @@ githubにアカウントを登録し、課題で作成したコードを各々�
   [Lesson4]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson4
   [Lesson5]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson5
   [Lesson6]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson6
-  [Lesson5]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson7
-  [Lesson6]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson8
+  [Lesson7]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson7
+  [Lesson8]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson8
