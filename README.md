@@ -9,8 +9,8 @@
 + [Lesson4]:データベース
 + [Lesson5]:フロントエンド
 + [Lesson6]:ajax(非同期通信)
-+ [Lesson7]:ajax(非同期通信)
-+ [Lesson8]:ajax(非同期通信)
++ [Lesson7]:SPA(シングルページアプリケーション)
++ [Lesson8]:HTML5によるスマフォアプリ
 
 ## 課題の提出方法
 githubにアカウントを登録し、課題で作成したコードを各々がわかる名前でファイル名を作成しレポジトリに登録すること。  
@@ -22,3 +22,5 @@ githubにアカウントを登録し、課題で作成したコードを各々�
   [Lesson4]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson4
   [Lesson5]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson5
   [Lesson6]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson6
+  [Lesson5]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson7
+  [Lesson6]: https://github.com/shogirin/acthouse_pg_shortclass/wiki/Lesson8
