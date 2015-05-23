@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>キャラ診断</title>
+</head>
+<body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h2>あなたの裏の性格…</h2>
+     </div>
+    <form class="form-inline">
+        <div class="form-group">
+        <label for="name" class="sr-only">名前を入力してください</label>
+        <input type="text" class="form-control" id="name" placeholder="あなたの名前">
+        <button type="submit" id="result_btn" class="btn btn-default">診断</button>
+        </div>
+    </form>
+
+    <h2>診断結果</h2>
+    <p id="result">結果が表示されます。</p>
+    <div id="tweet"></div>
+    </div>
+    <script>
+        $(function() {
+
+            $("#result_btn").click(function() {
+
+                // タイプの生成
+                var types = ["腹黒い慈善家", "変態紳士", "優しいメンヘラ", "マッチョな乙女"];
+
+                /*
+                * 課題；typeからランダムで一件取得し、#resultに入力した名前を使って、診断結果を表示させよ
+                *     加えて、twitterリンクで使ってるresultに変数に診断結果を格納し、ツィートリンク機能を完成させよ
+                *ヒント：課題おみくじ
+                */
+
+                // ツイートリンクの表示
+                var tweetLink = "<a href='https://twitter.com/intent/tweet?text=" + encodeURIComponent(result) + "&hashtags=dotinstall' target='_blank'>ツイートする</a>";
+                $("#tweet").html(tweetLink);
+
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

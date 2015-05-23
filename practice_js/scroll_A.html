@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>スクロール実験</title>
+</head>
+<body style="text-align:center;">
+    <h1>スクロール実験</h1>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <p>hello!</p>
+    <div id="back-to-top" style="position:fixed;right:5px;bottom:5px"><a href="#"><span style="font-size:2em" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></div>
+    <div id="pos" style="position:fixed;left:5px;bottom:5px"></div>
+    <script>
+    $(function() {
+        // 課題：#back-to-topがクリックされたら一秒かけて上に戻る
+        // ヒント：http://semooh.jp/jquery/api/effects/animate/params%2C+options/
+        $('#back-to-top a').click(function() {
+            $('body').animate({scrollTop:0}, 1000);
+            return false;
+        });
+
+    });
+    </script>
+</body>
+</html>
