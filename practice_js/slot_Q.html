@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>スロット</title>
+	<style>
+		.col {
+			float: left;
+			width: 100px;
+			text-align: center;
+			font-size: 32px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<div class="col">
+		<div class="well" id="slot0">?</div>
+		<button class="btn btn-default btn-xs" type="button" id="stop0">STOP</button>
+	</div>
+	<div class="col">
+		<div class="well" id="slot1">?</div>
+		<button class="btn btn-default btn-xs" type="button" id="stop1">STOP</button>
+	</div>
+	<div class="col">
+		<div class="well" id="slot2">?</div>
+		<button class="btn btn-default btn-xs" type="button" id="stop2">STOP</button>
+	</div>
+
+</div>
+	<script>
+	/*
+	* 課題：以下のコードを解析し、setInterval&clearIntervalを使って、スロットを完成させよ
+	* ヒント；timer変数の扱いに注目
+	*/
+	$(function(){
+
+		var timer = [];
+		var start = function(n){
+				$("#slot"+n).text(Math.floor(Math.random() * 3));
+			},50);
+		}
+		start(0);
+		start(1);
+		start(2);
+
+		var stop = function(n){
+			timer[n] = null;
+			for (var i =  0; i < timer.length; i++) {
+				 if(timer[i] !== null){
+				 	return false;
+				 }
+			}
+			var num = null;
+			for (var i =  0; i < timer.length; i++) {
+				 if(num !== null && $('#slot'+i).text() != num ){	
+					alert("外れ");
+				 	return false;
+				 }
+				 num = $('#slot'+i).text();
+			}
+			alert("大当たり！！！");
+		}
+
+		$('#stop0').click(function(){
+			stop(0);
+		});
+		$('#stop1').click(function(){
+			stop(1);
+		});
+		$('#stop2').click(function(){
+			stop(2);
+		});
+	});
+
+	</script>
+</body>
+</html>
