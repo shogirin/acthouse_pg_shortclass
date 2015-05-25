@@ -11,7 +11,8 @@ $dice = sort($dice);
 $result = "";
 /*
  * 課題：if,switchなどを駆使して、サイコロの結果を文字列$resultに格納し、結果をechoするように実装せよ。
- * ヒント：丁半ルール（http://ja.wikipedia.org/wiki/%E4%B8%81%E5%8D%8A#.E5.87.BA.E7.9B.AE）
+ * ヒント：偶数奇数の判断→http://oshiete.goo.ne.jp/qa/1299295.html
+ * 　　　　丁半ルール（http://ja.wikipedia.org/wiki/%E4%B8%81%E5%8D%8A#.E5.87.BA.E7.9B.AE）
  *        sort関数を実行している理由を考えること
  */
 echo "結果は：{$result}";
