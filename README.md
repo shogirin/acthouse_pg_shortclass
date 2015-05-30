@@ -9,7 +9,7 @@
 + [Lesson4]:データベース
 + [Lesson5]:フロントエンド
 + [Lesson6]:ajax(非同期通信)
-+ [Lesson7]:SPA(シングルページアプリケーション)
++ [Lesson7]:SPA(シングルページアプリケーション)とHTML5アプリ
 + [Lesson8]:HTML5によるスマフォアプリ
 
 ## 課題の提出方法
