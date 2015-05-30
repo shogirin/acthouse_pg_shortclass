@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>お天気情報</title>
+</head>
+<body>
+
+  <div class="container">
+      <div class="page-header">
+        <h1>お天気情報検索</h1>
+        <p class="lead">外部APIを使って、沖縄県のお天気情報を表示せよ</p>
+      </div>
+		<select name="city">
+			<option value="">選択してください</option>
+			<option value="471010">那覇</option>
+			<option value="471020">名護</option>
+			<option value="471030">久米島</option>
+			<option value="472000">南大東</option>
+			<option value="473000">宮古島</option>
+			<option value="474010">石垣島</option>
+			<option value="474020">与那国島</option>
+		</select>
+
+<div id="id-title"></div>
+<div id="id-img"></div>
+
+  </div>
+<script type="text/javascript">
+
+	$(function(){
+	  $("select").change(function () {
+	      $("select option:selected").each(function () {
+	            if($(this).val() != ""){
+	            	var url = encodeURIComponent("http://weather.livedoor.com/forecast/webservice/json/v1?city=" + $(this).val());
+			        $.getJSON(
+			            "http://192.168.56.101/forapi.php?url=" + url,
+			            function(data) {
+			            	// 以下のコンソール上に表示される内容をDOMに挿入、HTML上に表示させよ
+			            	// http://weather.livedoor.com/weather_hacks/webservice
+			                console.log(data['title']);
+			                console.log(data['forecasts'][0]['dateLabel']);
+			                console.log(data['forecasts'][0]['image']['url']);
+			            }
+				    );
+				}
+	      });
+	  });
+	});
+</script>
+</body>
+</html>
