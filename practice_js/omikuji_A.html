@@ -16,11 +16,11 @@
 		<h1 class="bg-primary">おみくじ</h1>
 	<span id="disp">あなたの運勢</span>
 	<form>
-	<input type="button" value="ひく" onclick="do()">
+	<input type="button" value="ひく" onclick="do_omi()">
 	</form>
 	</div>
 <script type="text/javascript"><!--
-function do(){ // ボタンが押された
+function do_omi(){ // ボタンが押された
      var arr = ['大吉', '中吉', '小吉', '吉', '末吉', '凶'];
      document.getElementById("disp").innerHTML = arr[Math.floor( Math.random() * arr.length )];
      return false;
