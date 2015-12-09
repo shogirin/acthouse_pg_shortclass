@@ -32,22 +32,18 @@
 		<div class="well" id="slot2">?</div>
 		<button class="btn btn-default btn-xs" type="button" id="stop2">STOP</button>
 	</div>
-
 </div>
+<div style="text-align: center"><button id="start">スタート</button></div>
 	<script>
 	$(function(){
 
 		var timer = [];
-		var start = function(n){
+		var each_start = function(n){
 			timer[n] = setInterval(function(){
 				$("#slot"+n).text(Math.floor(Math.random() * 3));
 			},50);
 		}
-		start(0);
-		start(1);
-		start(2);
-
-		var stop = function(n){
+		var each_stop = function(n){
 			clearInterval(timer[n]);
 			timer[n] = null;
 			for (var i =  0; i < timer.length; i++) {
@@ -57,7 +53,7 @@
 			}
 			var num = null;
 			for (var i =  0; i < timer.length; i++) {
-				 if(num !== null && $('#slot'+i).text() != num ){	
+				 if(num !== null && $('#slot'+i).text() != num ){
 					alert("外れ");
 				 	return false;
 				 }
@@ -65,16 +61,24 @@
 			}
 			alert("大当たり！！！");
 		}
-
+		var start = function(){
+			each_start(0);
+			each_start(1);
+			each_start(2);
+		}
 		$('#stop0').click(function(){
-			stop(0);
+			each_stop(0);
 		});
 		$('#stop1').click(function(){
-			stop(1);
+			each_stop(1);
 		});
 		$('#stop2').click(function(){
-			stop(2);
+			each_stop(2);
 		});
+		$('#start').click(function(){
+			start();
+		});
+		
 	});
 
 	</script>
