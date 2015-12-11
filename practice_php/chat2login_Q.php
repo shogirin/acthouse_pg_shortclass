@@ -23,7 +23,7 @@
   <label>ID</label>
   <input type="text" name="name" value="">
   <label>パスワード</label>
-  <input type="text" name="passwprd" value="">
+  <input type="text" name="password" value="">
   </div>
   <button type="submit" class="btn btn-default">ログイン</button>
 </form>
