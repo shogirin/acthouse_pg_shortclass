@@ -7,10 +7,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=acthouse_pg_shortclass',
 '');
 
 // 投稿された場合
-if(isset($_POST['name']) && isset($_POST['massage'])){
+if(isset($_POST['name']) && isset($_POST['message'])){
   $sql = "INSERT INTO pure_chats (name, message, created) VALUES (:name, :message, now())";
   $stmt = $dbh->prepare($sql);
-  $stmt->execute(array(":answer" => $_POST['name'], ":message" => $_POST['message']));
+  $stmt->execute(array(":name" => $_POST['name'], ":message" => $_POST['message']));
 }
 
 $sql = "SELECT name, message FROM pure_chats ORDER BY id";
@@ -55,7 +55,7 @@ $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<?php foreach($chats as $v): ?>
 		<div class="col-lg-12">
 			<h2><?php echo $v['name']; ?>さん</h2>
-			<p><?php echo $v['massage']; ?></p>
+			<p><?php echo $v['message']; ?></p>
 		</div>
 	<?php endforeach; ?>
 
