@@ -4,11 +4,13 @@
 <title>お絵描きデモ</title>
 </head>
 <body>
-	<canvas width="320" height="480"></canvas>
+	<canvas style="border:solid 1px" ></canvas>
 	<script src="jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 var x=0,y=0,Blush=false;
 $(function(){
+    $('canvas').get(0).width = $(window).width() -50;
+    $('canvas').get(0).height = $(window).height() -50;
     var ctx = $('canvas').get(0).getContext('2d');
  	$('body,html').bind("mousemove touchmove", function(event){
         var mouseX = event.type == "touchmove"?event.originalEvent.changedTouches[0].pageX:event.pageX;
