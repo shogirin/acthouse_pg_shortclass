@@ -5,6 +5,7 @@
 </head>
 <body>
 	<canvas style="border:solid 1px" ></canvas>
+    <button>リセット</button>
 	<script src="jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 var x=0,y=0,Blush=false;
@@ -29,6 +30,12 @@ $(function(){
     });
 	$('body,html').bind("mouseup touchend",function(){
         Blush=false;
+    });
+    $('button').click(function(){
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.fillRect(0, 0, 
+            $('canvas').get(0).width,
+            $('canvas').get(0).height);
     });
 });
 </script>
