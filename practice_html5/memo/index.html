@@ -21,9 +21,9 @@ $(function() {
         $("#memos").html('');
         for (var i = 0; i < memos.length; i++) {
             $("#memos").append(
-                "<li>"+"<a href='#'>"+
-                memos[i].length > 20 ?memos[i].substr(0,20)+"...":memos[i]
-                +"</a>:<a href='#'>削除</a>"+"</li>"
+                "<li><a href='#'>"+
+                ((memos[i].length > 20 )?memos[i].substr(0,20)+"...":memos[i])+
+                "</a>:<a href='#'>削除</a></li>"
             );
         }
         window.localStorage.setItem('memos', memos);
