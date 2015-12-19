@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <style>
+td{
+    width:20px;
+    height:20px;
+    border:solid 1px;
+}
+	</style>
+</head>
+<body>
+	
+<script type="text/javascript">
+$(function(){
+    var y_cell=20,x_cell=10,move_left=0,speed=5,block_angle=0;
+    var fall_height=0,$cells = $("td"),block=[];
+    var create_env = function(){
+        var html = "<table>";
+        for(var line =0; line < y_cell; line++){
+            html += "<tr>";
+            for(var cel =0; cel < x_cell; cel++){
+                html += "<td></td>";
+            }
+            html += "</tr>";
+        }
+        $(html + "</table>").appendTo("body");
+    },create_block = function(){
+    	var block_cells = [
+			[[[3,0],[2,0],[0,0]],[[1,2],[1,1],[0,3]],[[0,0],[0,1],[0,3]],[[0,0],[0,1],[0,2],[0,3]]],
+			[[0,0],[0,1],[1,0],[1,1]],
+			[[0,0],[0,1],[1,1],[1,2]],
+			[[0,1],[0,2],[1,0],[1,1]],
+			[[0,2],[1,0],[1,1],[1,2]],
+			[[0,0],[1,0],[1,1],[1,2]],
+			[[0,1],[1,0],[1,1],[1,2]],
+    	];
+    	return block_cells[Math.floor(Math.random()*block_cells.length)];
+    },move = function(){
+        var block_cell = block[block_angle];
+        $cells.css("background-color","transparent");
+        for(var i = 0; i < block_cell.length; i++){
+            var target_cell = (block_cell[i][0] + move_left) + (fall_height + block_cell[i][1])*x_cell;
+            if($cells.eq(target_cell)){
+                $cells.eq(target_cell).css("background-color","red");
+            }
+        }
+    },fall_block = function(){
+    	block = create_block();
+        fall_height = 0;
+    	move();
+        fall_height++;
+        if(fall_height < y_cell)setTimeout(move,1000/speed);
+    },move_by_key = function(e){
+	    switch(e.keyCode){
+	    	case 37:
+	    		move_left--;
+	    		break;
+	    	case 39:
+	    		move_left++;
+	    		break;
+	    	case 38:
+	    		block_angle--;
+	    		break;
+	    	case 40:
+	    		block_angle++;
+	    		break;
+	    }
+	    if(move_left<0)move_left=x_cell-1;
+        else if(move_left>=x_cell)move_left=0;
+        if(block_angle<0)block_angle=3;
+        else if(block_angle>3)block_angle=0;
+		move();
+    },init = function(){
+	    create_env();
+	    $(window).keydown(move_by_key);
+	    fall_block();
+    }
+    init();
+});
+</script>
+</body>
+</html>

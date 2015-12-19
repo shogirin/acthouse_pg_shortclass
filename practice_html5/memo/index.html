@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.min.js"></script>
+    <title>メモ帳</title>
+</head>
+<body>
+    <h1>メモ帳</h1>
+    <textarea id="memo" rows="10" cols="40" name="memo"></textarea>
+    <p><input type="button" id="new" value="新規"></p>
+    <ul id="memos"></ul>
+
+
+<script>
+$(function() {
+    var memos = window.localStorage.getItem('memos');
+    var target_index = null;
+
+    var init = function(){
+        $("#memos").html('');
+        for (var i = 0; i < memos.length; i++) {
+            $("#memos").append(
+                "<li>"+"<a href='#'>"+
+                memos[i].length > 20 ?memos[i].substr(0,20)+"...":memos[i]
+                +"</a>:<a href='#'>削除</a>"+"</li>"
+            );
+        }
+        window.localStorage.setItem('memos', memos);
+
+        // 呼び出し
+        $("#memos>li>a:first-child").unbind();
+        $("#memos>li>a:first-child").click(function(){
+            target_index = $("#memos>li").index($(this).parent());
+            $("#memo").val(memos[target_index]);
+        });
+
+        // 削除
+        $("#memos>li>a:last-child").unbind();
+        $("#memos>li>a:last-child").click(function(){
+            var target = $("#memos>li").index($(this).parent());
+            memos.splice(target, 1);
+            if(target < target_index){
+                target_index--;
+            }else if(target == target_index){
+                target_index = null;
+                $('#memo').val('');
+            }
+            init();
+        });
+    }
+
+    if (typeof memos == Array){
+        init();
+    }else{
+        memos = [];
+    }
+    $('#memo').bind('keyup', function() {
+        if(target_index == null){
+            memos.push($('#memo').val());
+            target_index = memos.length -1;
+        }else{
+            memos[target_index] = $('#memo').val();
+        }
+        init();
+    });
+
+    // 新規
+    $('#new').click(function() {
+        memos.push("");
+        $('#memo').val('');
+        target_index = memos.length -1;
+        init();
+    });
+
+});
+</script>
+</body>
+</html>
