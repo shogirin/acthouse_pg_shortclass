@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ヘビゲーム</title>
+	<style type="text/css">
+td{
+    width:30px;
+    height:30px;
+    border:solid 0px;
+}
+table{
+	border:solid 1px #eee;
+}
+	</style>
+</head>
+<body>
+
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script>
+var y_cell=10,x_cell=10;
+$(function(){
+	var create_env = function(){
+	    var html = "<table>";
+	    for(var line =0; line < y_cell; line++){
+	        html += "<tr>";
+	        for(var cel =0; cel < x_cell; cel++){
+	            html += "<td></td>";
+	        }
+	        html += "</tr>";
+	    }
+	    $(html + "</table>").appendTo("body");
+	    $("<p>蛇の体長：<span id='score'></span>メートル</p>").appendTo("body");
+	};
+
+	var rendering = function(targets){
+		var get_location_td_index = function(x, y){
+			return x + y*x_cell;
+		};
+		var each_render = function(bodys, color){
+		    for(var i =0; i < bodys.length; i++){
+				$("td").eq(get_location_td_index(bodys[i].x,bodys[i].y)).css("background-color",color);
+		    }
+		};
+		$("td").css("background-color","transparent");
+		for(var i =0; i < targets.length; i++){
+	    	each_render(targets[i].bodys,targets[i].color);
+		}
+	};
+
+	var Snake = function(x, y, size, food){
+		var localtion = {x:x, y:y};
+		var self = this;
+		this.bodys = [];
+	    for(var i =0; i < size; i++){
+	    	self.bodys.push($.extend(true, {}, localtion));
+	    }
+
+		this.move_to = {x:0, y:1};
+		this.color = "Chartreuse";
+
+		this.eat = function(){
+			self.bodys.push($.extend(true, {}, localtion));
+			food.add(self.bodys);
+		};
+		this.isHit = function(){
+			var head_location = self.bodys[0];
+			for (var i = self.bodys.length-1; i > 0; i--) {
+				if((self.bodys[i].x == head_location.x && self.bodys[i].y == head_location.y)
+				|| head_location.x < 0
+				|| head_location.x > x_cell
+				|| head_location.y < 0
+				|| head_location.y > y_cell){
+					return true;
+				}
+			}
+			return false;
+		};
+		this.move = function(){
+			for (var i = self.bodys.length-1; i > 0; i--) {
+				self.bodys[i] = $.extend(true, {}, self.bodys[i-1]);
+			}
+			localtion = $.extend(true, {}, self.bodys[self.bodys.length-1]);
+			self.bodys[0].x += self.move_to.x;
+			self.bodys[0].y += self.move_to.y;
+			if(!self.isHit()){
+				setTimeout(function(){
+					self.move();
+					rendering([food,self]);
+					if(food.isEated(self.bodys))self.eat();
+				},500);
+			}else{
+				alert("ゲームオーバー");
+			}
+			$("#score").text(self.bodys.length);
+		};
+	};
+
+	var Food = function(num){
+		var self = this;
+		this.bodys = [];
+		this.color = "red";
+		this.add = function(snake_location){
+			var new_location = null;
+			var check_locations = self.bodys.concat(snake_location);
+			while(new_location === null){
+				var tmp = {x:Math.floor(Math.random()*x_cell),
+					y:Math.floor(Math.random()*y_cell)};
+				for (var i =0; i < check_locations.length;i++) {
+					if(check_locations[i].x != tmp.x || check_locations[i].x != tmp.y){
+						new_location = tmp;
+						break;
+					}
+				}
+			}
+			if(new_location!==null)self.bodys.push(new_location);
+		};
+		this.isEated = function(snake_location){
+			for (var fi =0; fi < self.bodys.length;fi++) {
+				for (var si =0; si < snake_location.length;si++) {
+					if(snake_location[si].x == self.bodys[fi].x && snake_location[si].y == self.bodys[fi].y){
+						self.bodys.splice(fi, 1);
+						return true;
+					}
+				}
+			}
+			return false;
+		};
+	    for(var i =0; i < num; i++){
+	    	self.add([{x:0,y:0}]);
+	    };
+	};
+
+	create_env();
+	var food = new Food(3);
+	var snake = new Snake(0, 0, 4, food);
+	$(window).keydown(function(e){
+		switch(e.keyCode){
+	    	case 37://左
+	    		snake.move_to.x = -1;
+	    		snake.move_to.y = 0;
+	    		break;
+	    	case 39://右
+	    		snake.move_to.x = 1;
+	    		snake.move_to.y = 0;
+	    		break;
+	    	case 38://上
+	    		snake.move_to.x = 0;
+	    		snake.move_to.y = -1;
+	    		break;
+	    	case 40://下
+	    		snake.move_to.x = 0;
+	    		snake.move_to.y = 1;
+	    		break;
+	    }
+	});
+	snake.move();
+});
+
+
+</script>
+
+</body>
+</html>

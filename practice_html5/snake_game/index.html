@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ヘビゲーム</title>
+</head>
+<body>
+	<style type="text/css">
+		canvas{
+			background-color: #ccc;
+		}
+	</style>
+	<canvas></canvas>
+<script type="text/javascript">
+(function(){
+	var canvas = document.getElementsByTagName('canvas');
+	canvas = canvas[0];
+	var cell_num = 20,
+	point = 0;
+
+	var snake = function(){
+		var size = {x:0,y:0};
+		var bodys = [];
+		var localtion = {x:0, y:0};
+		var move_to = {x:true, y:true};
+
+		var init_size = function(){
+			size.x = cell_num /2;
+			size.y = cell_num /2;
+		};
+		this.eat = function(){
+			point += 10;
+			bodys.push(localtion);
+		};
+		this.move = function(){
+			
+		};
+	}
+
+	var init = function(){
+		var ctx = canvas.getContext('2d');
+
+	}
+})();
+	</script>
+</body>
+</html>
