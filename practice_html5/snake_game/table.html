@@ -11,7 +11,8 @@ td{
     border:solid 0px;
 }
 table{
-	border:solid 1px #eee;
+	border:solid 1px #999;
+	background-color: #eee;
 }
 	</style>
 </head>
@@ -19,94 +20,150 @@ table{
 
 <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
 <script>
-var y_cell=10,x_cell=10;
 $(function(){
-	var create_env = function(){
-	    var html = "<table>";
-	    for(var line =0; line < y_cell; line++){
-	        html += "<tr>";
-	        for(var cel =0; cel < x_cell; cel++){
-	            html += "<td></td>";
-	        }
-	        html += "</tr>";
-	    }
-	    $(html + "</table>").appendTo("body");
-	    $("<p>蛇の体長：<span id='score'></span>メートル</p>").appendTo("body");
-	};
+	var MAX_STAGE_Y=10,MAX_STAGE_X=10;
+	var SNAKE_FIRST_SIZE = 4, FOOD_NUM = 3;
+	var GAME_SPEED = 10;
 
-	var rendering = function(targets){
+	var clone = function(obj){
+		return $.extend(true, {}, obj)
+	}
+
+	var Stage = function(X, Y){
+		var self = this;
+		var snake, food;
 		var get_location_td_index = function(x, y){
-			return x + y*x_cell;
+			return x + y*X;
 		};
-		var each_render = function(bodys, color){
-		    for(var i =0; i < bodys.length; i++){
-				$("td").eq(get_location_td_index(bodys[i].x,bodys[i].y)).css("background-color",color);
+		var each_render = function(locations, color){
+		    for(var i =0; i < locations.length; i++){
+				$("td").eq(get_location_td_index(locations[i].x,locations[i].y)).css("background-color",color);
 		    }
 		};
-		$("td").css("background-color","transparent");
-		for(var i =0; i < targets.length; i++){
-	    	each_render(targets[i].bodys,targets[i].color);
-		}
+		var create = function(){
+			var html = "<table>";
+	    	for(var line =0; line < Y; line++){
+	        html += "<tr>";
+		        for(var cel =0; cel < X; cel++){
+		            html += "<td></td>";
+		        }
+		        html += "</tr>";
+		    }
+		    $(html + "</table>").appendTo("body");
+		    $("<p>蛇の体長：<span id='score'></span>メートル</p>").appendTo("body");
+		};
+		var rendering = function(){
+			$("td").css("background-color","transparent");
+			each_render(food.locations,food.color);
+			each_render(snake.locations,snake.color);
+		};
+		self.setSnake = function(arg){
+			snake = arg;
+		};
+		self.setFood = function(arg){
+			food = arg;
+		};
+		self.start = function(){
+			var interval = function(){
+				if(!snake.isHit()){
+					setTimeout(function(){
+						snake.alive();
+						rendering();
+						if(food.isEated(snake.locations[0])){
+							snake.eat();
+							food.add(snake.locations);
+						}
+						interval();
+					},5000/GAME_SPEED);
+				}else{
+					if(confirm("ゲームオーバー")){
+						self.setFood(new Food(MAX_STAGE_X, MAX_STAGE_Y, FOOD_NUM));
+						self.setSnake(new Snake(0, 0, SNAKE_FIRST_SIZE));
+						self.start();
+					}
+				}
+				$("#score").text(snake.locations.length);
+			}
+			snake.move(40);//下
+			snake.alive();
+			rendering();
+			interval();
+		};
+		self.init = function(){
+			create();
+			$(window).keydown(function(e){
+			    snake.move(e.keyCode);
+			});
+			self.start();
+		};
 	};
 
-	var Snake = function(x, y, size, food){
-		var localtion = {x:x, y:y};
+	var Snake = function(x, y, size){
 		var self = this;
-		this.bodys = [];
+		var location = {x:x, y:y};
+		self.locations = [];
+		self.color = "Chartreuse";
 	    for(var i =0; i < size; i++){
-	    	self.bodys.push($.extend(true, {}, localtion));
+	    	self.locations.push(clone(location));
 	    }
+		var move_to = {x:0, y:0};
 
-		this.move_to = {x:0, y:1};
-		this.color = "Chartreuse";
-
-		this.eat = function(){
-			self.bodys.push($.extend(true, {}, localtion));
-			food.add(self.bodys);
+		self.move = function(keyCode){
+			switch(keyCode){
+		    	case 37://左
+		    		move_to.x = -1;
+		    		move_to.y = 0;
+		    		break;
+		    	case 39://右
+		    		move_to.x = 1;
+		    		move_to.y = 0;
+		    		break;
+		    	case 38://上
+		    		move_to.x = 0;
+		    		move_to.y = -1;
+		    		break;
+		    	case 40://下
+		    		move_to.x = 0;
+		    		move_to.y = 1;
+		    		break;
+		    }
 		};
-		this.isHit = function(){
-			var head_location = self.bodys[0];
-			for (var i = self.bodys.length-1; i > 0; i--) {
-				if((self.bodys[i].x == head_location.x && self.bodys[i].y == head_location.y)
+		self.eat = function(){
+			self.locations.push(clone(localtion));
+		};
+		self.isHit = function(){
+			var head_location = self.locations[0];
+			for (var i = self.locations.length-1; i > 0; i--) {
+				if((self.locations[i].x == head_location.x && self.locations[i].y == head_location.y)
 				|| head_location.x < 0
-				|| head_location.x > x_cell
+				|| head_location.x > MAX_STAGE_X
 				|| head_location.y < 0
-				|| head_location.y > y_cell){
+				|| head_location.y > MAX_STAGE_Y){
 					return true;
 				}
 			}
 			return false;
 		};
-		this.move = function(){
-			for (var i = self.bodys.length-1; i > 0; i--) {
-				self.bodys[i] = $.extend(true, {}, self.bodys[i-1]);
+		self.alive = function(){
+			for (var i = self.locations.length-1; i > 0; i--) {
+				self.locations[i] = clone(self.locations[i-1]);
 			}
-			localtion = $.extend(true, {}, self.bodys[self.bodys.length-1]);
-			self.bodys[0].x += self.move_to.x;
-			self.bodys[0].y += self.move_to.y;
-			if(!self.isHit()){
-				setTimeout(function(){
-					self.move();
-					rendering([food,self]);
-					if(food.isEated(self.bodys))self.eat();
-				},500);
-			}else{
-				alert("ゲームオーバー");
-			}
-			$("#score").text(self.bodys.length);
+			localtion = clone(self.locations[self.locations.length-1]);
+			self.locations[0].x += move_to.x;
+			self.locations[0].y += move_to.y;
 		};
 	};
 
-	var Food = function(num){
+	var Food = function(X, Y, num){
 		var self = this;
-		this.bodys = [];
-		this.color = "red";
-		this.add = function(snake_location){
+		self.locations = [];
+		self.color = "red";
+		self.add = function(snake_locations){
 			var new_location = null;
-			var check_locations = self.bodys.concat(snake_location);
+			var check_locations = self.locations.concat(snake_locations);
 			while(new_location === null){
-				var tmp = {x:Math.floor(Math.random()*x_cell),
-					y:Math.floor(Math.random()*y_cell)};
+				var tmp = {x:Math.floor(Math.random()*X),
+					y:Math.floor(Math.random()*Y)};
 				for (var i =0; i < check_locations.length;i++) {
 					if(check_locations[i].x != tmp.x || check_locations[i].x != tmp.y){
 						new_location = tmp;
@@ -114,15 +171,13 @@ $(function(){
 					}
 				}
 			}
-			if(new_location!==null)self.bodys.push(new_location);
+			if(new_location!==null)self.locations.push(new_location);
 		};
-		this.isEated = function(snake_location){
-			for (var fi =0; fi < self.bodys.length;fi++) {
-				for (var si =0; si < snake_location.length;si++) {
-					if(snake_location[si].x == self.bodys[fi].x && snake_location[si].y == self.bodys[fi].y){
-						self.bodys.splice(fi, 1);
-						return true;
-					}
+		self.isEated = function(snake_location){
+			for (var i =0; i < self.locations.length;i++) {
+				if(snake_location.x == self.locations[i].x && snake_location.y == self.locations[i].y){
+					self.locations.splice(i, 1);
+					return true;
 				}
 			}
 			return false;
@@ -132,30 +187,10 @@ $(function(){
 	    };
 	};
 
-	create_env();
-	var food = new Food(3);
-	var snake = new Snake(0, 0, 4, food);
-	$(window).keydown(function(e){
-		switch(e.keyCode){
-	    	case 37://左
-	    		snake.move_to.x = -1;
-	    		snake.move_to.y = 0;
-	    		break;
-	    	case 39://右
-	    		snake.move_to.x = 1;
-	    		snake.move_to.y = 0;
-	    		break;
-	    	case 38://上
-	    		snake.move_to.x = 0;
-	    		snake.move_to.y = -1;
-	    		break;
-	    	case 40://下
-	    		snake.move_to.x = 0;
-	    		snake.move_to.y = 1;
-	    		break;
-	    }
-	});
-	snake.move();
+	var stage = new Stage(MAX_STAGE_X, MAX_STAGE_Y);
+	stage.setFood(new Food(MAX_STAGE_X, MAX_STAGE_Y, FOOD_NUM));
+	stage.setSnake(new Snake(0,0, SNAKE_FIRST_SIZE));
+	stage.init();
 });
 
 
