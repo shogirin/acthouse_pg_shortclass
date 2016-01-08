@@ -6,7 +6,7 @@ echo "サイコロ1：{$dice[0]}\n";
 echo "サイコロ2：{$dice[1]}\n";
 
 // http://php.net/manual/ja/function.sort.php
-$dice = sort($dice);
+sort($dice);
 
 $result = "";
 /*
