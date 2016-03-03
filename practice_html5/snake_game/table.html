@@ -32,12 +32,12 @@ $(function(){
 	var Stage = function(X, Y){
 		var self = this;
 		var snake, food;
-		var get_location_td_index = function(x, y){
+		var getLocationTdIndex = function(x, y){
 			return x + y*X;
 		};
 		var each_render = function(locations, color){
 		    for(var i =0; i < locations.length; i++){
-				$("td").eq(get_location_td_index(locations[i].x,locations[i].y)).css("background-color",color);
+				$("td").eq(getLocationTdIndex(locations[i].x,locations[i].y)).css("background-color",color);
 		    }
 		};
 		var create = function(){

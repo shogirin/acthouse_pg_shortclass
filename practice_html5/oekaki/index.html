@@ -18,27 +18,35 @@
 <script type="text/javascript">
 var x=0,y=0,Blush=false;
 $(function(){
+    // canvasサイズの設定
     $('canvas').get(0).width = $(window).width() -50;
     $('canvas').get(0).height = $(window).height() -50;
+    // canvasの描画設定
     var ctx = $('canvas').get(0).getContext('2d');
  	$('body,html').bind("mousemove touchmove", function(event){
+        // ポインタの座標取得
         var mouseX = event.type == "touchmove"?event.originalEvent.changedTouches[0].pageX:event.pageX;
         var mouseY = event.type == "touchmove"?event.originalEvent.changedTouches[0].pageY:event.pageY;
+        // 描画フラグがオンの場合、描画実行(前座標からの移動部分を描画)
         if(Blush){
             ctx.beginPath();
             ctx.moveTo(x, y);
             ctx.lineTo(mouseX, mouseY);
             ctx.stroke();
         }
+        // 前ポインタ座標の保存
         x =mouseX;
         y =mouseY;
     });
+    // 描画ON
 	$('body,html').bind("mousedown touchstart",function(){
         Blush=true;
     });
+    // 描画OFF
 	$('body,html').bind("mouseup touchend",function(){
         Blush=false;
     });
+    // 描画内容のリセット
     $('button').click(function(){
         ctx.fillStyle = "rgb(255, 255, 255)";
         ctx.fillRect(0, 0, 
